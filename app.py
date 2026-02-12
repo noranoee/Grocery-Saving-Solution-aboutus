@@ -3,10 +3,15 @@ from pages.home import render_home
 from pages.departments import render_departments
 from pages.aisle import render_aisle
 
-# ======================
 # CONFIG
-# ======================
 st.set_page_config(page_title="Instacart Analytics", layout="wide")
+
+#HIDE STREAMLIT STYLE
+st.markdown("""
+<style>
+section[data-testid="stSidebar"] {display: none;}
+</style>
+""", unsafe_allow_html=True)
 
 # READ PAGE FROM URL
 page = st.query_params.get("page", "HOME")
@@ -15,9 +20,7 @@ page = st.query_params.get("page", "HOME")
 with open("css/style.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# ======================
 # NAVBAR
-# ======================
 nav1, nav2, nav3, nav4 = st.columns([4, 1, 1, 1])
 
 with nav1:
@@ -46,9 +49,7 @@ with nav4:
 
 st.divider()
 
-# ======================
 # ROUTER
-# ======================
 if page == "HOME":
     render_home()
 
