@@ -1,11 +1,18 @@
-# import pandas as pd
+import pandas as pd
+import streamlit as st
 
-# def load_data(data_path="data"):
-#     orders = pd.read_csv(f"{data_path}/orders.csv")
-#     order_products = pd.read_csv(f"{data_path}/order_products__prior.csv")
-#     products = pd.read_csv(f"{data_path}/products.csv")
+@st.cache_data
+def load_rules():
+    return pd.read_csv("data/fpg_rules.csv")
 
-#     df = orders.merge(order_products, on="order_id")
-#     df = df.merge(products, on="product_id")
+@st.cache_data
+def load_order_segments():
+    return pd.read_csv("data/order_segments.csv")
 
-#     return df
+@st.cache_data
+def load_user_segment_report():
+    return pd.read_csv("data/user_segment_report.csv")
+
+@st.cache_data
+def load_dept_revenue():
+    return pd.read_csv("data/dept_revenue.csv")
