@@ -2,6 +2,7 @@ import streamlit as st
 from pages.home import render_home
 from pages.departments import render_departments
 from pages.aisle import render_aisle
+from pages.about_us import render_about
 
 # CONFIG
 st.set_page_config(page_title="Instacart Analytics", layout="wide")
@@ -50,7 +51,7 @@ elif page == "AISLE":
     render_aisle()
 
 elif page == "ABOUT":
-    st.header("ℹ️ About Us")
+    render_about()
 
 else:
     st.header("Page not found")
