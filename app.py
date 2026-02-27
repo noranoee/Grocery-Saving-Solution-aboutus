@@ -33,6 +33,7 @@ st.markdown(f"""
 
 <div class="menu">
     <a href="?page=HOME" class="{active('HOME')}">Home</a>
+    <a href="?page=DASHBOARD" class="{active('DASHBOARD')}">Dashboard</a>
     <a href="?page=ABOUT" class="{active('ABOUT')}">About Us</a>
 </div>
 </div>
