@@ -2,16 +2,13 @@ import streamlit as st
 from pages.home import render_home
 from pages.departments import render_departments
 from pages.aisle import render_aisle
-<<<<<<< HEAD
-from pages.about_us import render_about
-=======
-from pages.dashboard import render_dashboard
->>>>>>> de47794ba17a258d83d0f082584b3ec4f8d97a2e
+from pages.about_us import render_about    # keep your About Us page
+from pages.dashboard import render_dashboard  # keep your friend's Dashboard page
 
-#  Page configuration
+# Page configuration
 st.set_page_config(page_title="Instacart Analytics", layout="wide")
 
-#Hide Streamlit default menu and footer
+# Hide Streamlit default menu and footer
 st.markdown("""
 <style>
 section[data-testid="stSidebar"] {display: none;}
@@ -28,6 +25,7 @@ with open("css/style.css") as f:
 # Navigation bar with active state
 def active(p):
     return "active" if page == p else ""
+
 # Custom navigation bar
 st.markdown(f"""
 <div class="navbar">
@@ -58,4 +56,3 @@ elif page == "ABOUT":
 
 else:
     st.header("Page not found")
-
